@@ -15,12 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow()
-        window?.rootViewController = ViewController()
+        window?.rootViewController = BandViewController()
         window?.makeKeyAndVisible()
         
         return true
     }
 
+    override init() {
+        super.init()
+        Engine.start(MTLCreateSystemDefaultDevice())
+    }
 
 }
 
